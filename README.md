@@ -1,7 +1,7 @@
-# advectionDiffusionSphe
+# sphericalAdvectionDiffusion
 
 **************************************************************************
-************* advectionDiffusionSphe (aDS) for OpenFOAM ********************
+************* sphericalAdvectionDiffusion for OpenFOAM ********************
 **************************************************************************
 
 * General Information

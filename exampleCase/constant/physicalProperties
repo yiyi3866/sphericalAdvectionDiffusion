@@ -1,0 +1,31 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      physicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+S              S [0 0 -1 1 0 0 0] 0;
+tstop          tstop [0 0 1 0 0 0 0] 3155815000;//S, heatsource
+
+Tp      1173.15;//925 - pluton temperature
+Tr      573.15;//regional temperature
+Rp      3000;//3km - pluton radius
+Ld      2371; //1km deformation
+// 1 a = 31556952 sec
+tGrowth      50000; //10 000 a - 100 000 a
+tDiffuse   500000;
+tStepGrowth    0.5; //timestep = xx years
+tStepDiffuse    0.5;
+
+
+// ************************************************************************* //

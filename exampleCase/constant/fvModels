@@ -1,0 +1,35 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  10
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "constant/heater";
+    object      fvModels;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+energySource
+{
+
+    type            heatSource;
+
+    //select	    cellSet; //in OF10, it was "selectionMode" rather than "select"
+    //cellSet	    heater;
+    
+    select          all;
+
+    Q               1e7;
+}
+
+// ************************************************************************* //
+//reference:OpenFOAM
+//https://cpp.openfoam.org/v11/classFoam_1_1fv_1_1heatSource.html
+//https://github.com/OpenFOAM/OpenFOAM-dev/commit/8d707b48c602fe1c4f97a9e54b61b3784f5aaff6#diff-81676de572391a6fdb5179432a1aa64ad69b5be9469f5bdabe83c015347260e9
+//https://www.cfd-online.com/Forums/openfoam-solving/187680-heat-source-cell-chtmultiregionsimplefoam.html for select cells
+

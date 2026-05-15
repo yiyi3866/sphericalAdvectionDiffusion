@@ -1,0 +1,71 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     spheAdvDiff;
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         31556952000000; //200 ma;
+//one year = 31556952s
+
+deltaT          315569.52; //max = time from one grid to another / 2
+
+writeControl    runTime;
+
+writeInterval   315569520;//63113904;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   0;
+
+runTimeModifiable true;
+
+//For more easy probing, this works:
+/*
+functions
+{
+    probes
+    {
+        type            probes;
+        functionObjectLibs ("libsampling.so");
+        writeControl   timeStep;
+        writeInterval  315581500;
+        probeLocations
+        (
+            ( 0 200 0)
+            ( 0 600 0)
+
+        );
+        fields
+        (
+            T
+        );
+    }
+}
+*/
+
+// ************************************************************************* //

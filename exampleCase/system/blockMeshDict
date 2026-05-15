@@ -1,0 +1,85 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+convertToMeters 1;
+
+//Country rock coordinates
+x 4000;
+mx 0;
+y 4000;
+my 0;
+z 20000;
+mz 0; 
+
+
+vertices
+(
+    //Country rock
+    ($mx $my $mz)
+    ($x  $my $mz)
+    ($x  $y  $mz)
+    ($mx $y  $mz)
+    ($mx $my $z )
+    ($x  $my $z )
+    ($x  $y  $z )
+    ($mx $y  $z )
+
+);
+
+blocks
+(
+    hex (0 1 2 3 4 5 6 7) (1 1 5000) simpleGrading (1 1 1) //this should be changed to (1 1 44000) from (1 1 4400).
+);
+
+
+
+boundary
+(
+    sides
+    {
+        type patch;
+        faces
+        (
+            (0 4 7 3)
+            (2 6 5 1)
+            (1 5 4 0)
+            (3 7 6 2)
+        );
+    }
+    
+    top
+    {
+        type patch; 
+        faces
+        (
+
+            (4 5 6 7)
+        );
+    }
+    bottom
+    {
+        type patch; 
+        faces
+        (
+            (0 3 2 1)
+
+        );
+    }
+    
+
+);
+
+
+
+// ************************************************************************* //

@@ -1,0 +1,32 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| ===                 |
+| \      /  F ield    | OpenFOAM: The Open Source CFD Toolbox
+|  \    /   O peration| Version:  11
+|   \  /    A nd      |
+|    \/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      setFieldsDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+defaultFieldValues
+(
+    volScalarFieldValue T 573.15   // Ground temperature
+    volScalarFieldValue DT 2e-06
+    volVectorFieldValue V (0 0 0)
+    volScalarFieldValue S 0
+    volScalarFieldValue S0 0
+);
+
+regions
+(
+    // Leave this empty if no specific region settings are needed
+);
+
+// ************************************************************************* //

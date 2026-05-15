@@ -14,5 +14,5 @@ The package includes for now:
     - an exampleCase
 
 
-* This toolbox has been tested on OpenFOAM v11 only (use the v11legacy branch)
+* This toolbox has been tested on OpenFOAM v10 only
 OpenFOAM installation: www.openfoam.org
